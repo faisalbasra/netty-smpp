@@ -56,7 +56,33 @@
             <version>0.3.9</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.opensmpp</groupId>
+            <artifactId>opensmpp-sim</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.opensmpp</groupId>
+            <artifactId>opensmpp-client</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.opensmpp</groupId>
+            <artifactId>opensmpp-core</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+
+
 	</dependencies>
+
+    <repositories>
+        <repository>
+            <id>sonatype-oss</id>
+            <url>https://oss.sonatype.org/content/groups/public</url>
+        </repository>
+    </repositories>
+
+
 	<build>
 		<plugins>
 			<plugin>
