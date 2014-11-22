@@ -1,10 +1,10 @@
 package netty.smpp.traditional;
 
-import ie.omk.smpp.Connection;
-import ie.omk.smpp.event.ConnectionObserver;
-import ie.omk.smpp.event.SMPPEvent;
-import ie.omk.smpp.message.BindResp;
-import ie.omk.smpp.message.SMPPPacket;
+import netty.smpp.api.Connection;
+import netty.smpp.api.event.ConnectionObserver;
+import netty.smpp.api.event.SMPPEvent;
+import netty.smpp.api.message.BindResp;
+import netty.smpp.api.message.SMPPPacket;
 
 public class SmppReceiver implements ConnectionObserver {
 

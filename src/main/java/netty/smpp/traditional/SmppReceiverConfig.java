@@ -4,7 +4,7 @@ public class SmppReceiverConfig {
 
     private String host = "localhost";
 
-    private int port = 5555;
+    private int port = 1234;
 
     private String systemId = "DAMIEN";
 

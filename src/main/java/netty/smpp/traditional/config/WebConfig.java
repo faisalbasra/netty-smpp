@@ -31,27 +31,27 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @Configuration
 public class WebConfig extends WebMvcConfigurerAdapter {
 
-	@Override
-	public void addViewControllers(ViewControllerRegistry registry) {
-		registry.addViewController("/").setViewName("home");
-	}
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/").setViewName("home");
+    }
 
-	@Bean
-	public InternalResourceViewResolver viewResolver() {
-		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-		viewResolver.setPrefix("/WEB-INF/views/");
-		viewResolver.setSuffix(".jsp");
-		return viewResolver;
-	}
+    @Bean
+    public InternalResourceViewResolver viewResolver() {
+        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+        viewResolver.setPrefix("/WEB-INF/views/");
+        viewResolver.setSuffix(".jsp");
+        return viewResolver;
+    }
 
-	@Bean
-	// Only used when running in embedded servlet
-	public DispatcherServlet dispatcherServlet() {
-		return new DispatcherServlet();
-	}
+    @Bean
+    // Only used when running in embedded servlet
+    public DispatcherServlet dispatcherServlet() {
+        return new DispatcherServlet();
+    }
 
-	@Override
-	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
-		configurer.enable();
-	}
+    @Override
+    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+        configurer.enable();
+    }
 }
