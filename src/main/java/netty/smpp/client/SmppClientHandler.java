@@ -80,19 +80,14 @@ public class SmppClientHandler extends
         byteBuf.writeBytes(str.getBytes());
         byteBuf.writeByte(0);
     }
-/*
-    private byte[] stringToBytes(String s) {
-        ArrayUtils.addAll(s.getBytes());
-        Byte[] b = new Byte[s.length() + 1];
-        return s.getBytes();
-    }
-    */
 
     @Override
     public void channelRead0(ChannelHandlerContext ctx,
                              ByteBuf in) {
-        System.out.println("Client received: " + ByteBufUtil
-                .hexDump(in));
+        System.out.println("Client received: ");
+      //  System.out.println("Client received: " + ByteBufUtil
+        //        .hexDump(in));
+        // read the cmdLength
     }
 
     @Override

@@ -3,10 +3,12 @@ package netty.smpp.client;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
+import io.netty.channel.ChannelPipeline;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
+import netty.smpp.client.decoder.SmppPacketDecoder;
 import netty.smpp.traditional.SmppReceiverConfig;
 
 import java.net.InetSocketAddress;
@@ -39,8 +41,9 @@ public class SmppClient {
                         @Override
                         public void initChannel(SocketChannel ch)
                                 throws Exception {
-                            ch.pipeline().addLast(
-                                    new SmppClientHandler());
+                            ch.pipeline()
+                                    .addLast(new SmppPacketDecoder())
+                                    .addLast(new SmppClientHandler());
                         }
                     });
 
